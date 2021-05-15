@@ -10,7 +10,6 @@ public class LEVELOne
     boolean ballOnPaddle = true;
     boolean shouldExit = false;
     boolean isActive;
-    int score = 0;
     int livesLeft = 3;
     Paddle paddle = new Paddle();
     Ball ball = new Ball();
@@ -32,6 +31,16 @@ public class LEVELOne
             //Render the position of the player's paddle
             gc.setFill(Color.ROYALBLUE);
             gc.fillRect(paddle.xPos, paddle.yPos, paddle.xSize, paddle.ySize);
+            //Render the score
+            gc.setFill(Color.WHITE);
+            gc.setFont(new Font( 40));
+            gc.setTextAlign(TextAlignment.CENTER);
+            gc.fillText("Score: "+Brick.score, 1170, 710);
+            //Render the lives
+            gc.setFill(Color.WHITE);
+            gc.setFont(new Font( 40));
+            gc.setTextAlign(TextAlignment.CENTER);
+            gc.fillText("Lives: "+livesLeft, 170, 710);
             //Render the Ball
             gc.fillOval(ball.xPos, ball.yPos, ball.xSize, ball.ySize);
             //Render the Brick Array
@@ -134,7 +143,6 @@ public class LEVELOne
             shouldExit = false;
             ballOnPaddle = true;
             this.brickArray = new BrickArray();
-            this.score = 0;
 
         }
 
