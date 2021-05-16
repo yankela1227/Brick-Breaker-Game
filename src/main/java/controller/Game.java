@@ -1,4 +1,4 @@
-package inf.unideb.hu;
+package controller;
 
 //=====================imports==================================================
 import javafx.animation.AnimationTimer;

@@ -1,5 +1,7 @@
-package inf.unideb.hu;
+package brickbreaker;
 
+import controller.Game;
+import controller.Input;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -36,7 +38,7 @@ public class LEVELMenu
             gc.setFont(new Font( 50));
             gc.setTextAlign(TextAlignment.CENTER);
 
-            gc.fillText("Username: "+Game.username, 670, 340);
+            gc.fillText("Username: "+ Game.username, 670, 340);
 
 
             //renders play and exit signs

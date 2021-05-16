@@ -1,10 +1,11 @@
-package inf.unideb.hu;
+package brickbreaker;
 
+import brickbreaker.Ball;
 import javafx.scene.paint.Color;
 public class Brick
 {
     //variables
-    static int score = 0;
+    public static int score = 0;
     int xPos;
     int yPos;
     int health;

@@ -1,5 +1,11 @@
-package inf.unideb.hu;
+package brickbreaker;
 
+import brickbreaker.Ball;
+import brickbreaker.Brick;
+import brickbreaker.BrickArray;
+import brickbreaker.Paddle;
+import controller.Input;
+import inf.unideb.hu.DatabaseHandler;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -123,6 +129,7 @@ public class LEVELOne
         this.livesLeft--;
         if(this.livesLeft == 0)
         {
+            DatabaseHandler.insertTable();
             shouldExit = true;
         }
 

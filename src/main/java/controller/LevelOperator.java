@@ -1,10 +1,9 @@
-package inf.unideb.hu;
+package controller;
 
+import brickbreaker.LEVELMenu;
+import brickbreaker.LEVELOne;
 import javafx.application.Platform;
 import javafx.scene.canvas.GraphicsContext;
-import javafx.scene.paint.Color;
-import javafx.scene.image.Image;
-
 
 
 public class LevelOperator
@@ -40,7 +39,7 @@ public class LevelOperator
             }
         }
     }
-    public void levelTick( Input input, int tickCount)
+    public void levelTick(Input input, int tickCount)
     {// tells the game to perform a logic tick and asks if the
         //level should be exited
         switch(levelNumber)

@@ -1,4 +1,7 @@
-package inf.unideb.hu;
+package brickbreaker;
+
+import brickbreaker.Ball;
+import brickbreaker.Brick;
 
 public class BrickArray
 {

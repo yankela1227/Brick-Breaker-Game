@@ -1,4 +1,5 @@
-package inf.unideb.hu;
+package main;
+import controller.Game;
 import javafx.application.Application;
 import javafx.stage.Stage;
 

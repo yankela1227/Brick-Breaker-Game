@@ -1,4 +1,4 @@
-package inf.unideb.hu;
+package controller;
 
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
@@ -9,11 +9,11 @@ public class Input
 {
     //variables
     //----determines what values even exist
-    boolean up = false;
+    public boolean up = false;
     boolean down = false;
-    boolean left = false;
-    boolean right = false;
-    boolean space = false;
+    public boolean left = false;
+    public boolean right = false;
+    public boolean space = false;
     boolean m = false;
 
     Scene scene;

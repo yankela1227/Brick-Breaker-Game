@@ -1,4 +1,4 @@
-package inf.unideb.hu;
+package brickbreaker;
 
 public class Ball {
     //variables
