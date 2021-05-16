@@ -32,6 +32,13 @@ public class LEVELMenu
 
             gc.fillText("Jankelic Ivan Brick Breaker", 670, 140);
 
+            gc.setFill(Color.WHITE);
+            gc.setFont(new Font( 50));
+            gc.setTextAlign(TextAlignment.CENTER);
+
+            gc.fillText("Username: "+Game.username, 670, 340);
+
+
             //renders play and exit signs
             gc.setFont(new Font(50));
             //colors the active choice yellow

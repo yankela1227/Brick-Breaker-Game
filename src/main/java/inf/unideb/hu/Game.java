@@ -6,11 +6,18 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 //====================body======================================================
 public class Game
 {
     //variables
+    Stage window;
+    Scene scene1, scene2;
+    public static String username;
     public boolean running = true;//informs the game that it is running
     public int tickCount = 0;//tells the number of logic updates since start
     public int width = 1370;//gives width of screen
@@ -25,18 +32,35 @@ public class Game
         //================================
         //Staging block and initialization
         //================================
+        window = primaryStage;
+        Label label1 = new Label("Type your username!");
+        TextField usernameTextField = new TextField();
+
+        //System.out.println("Username: "+username);
+        Button button1 = new Button("Set");
+        button1.setOnAction(e -> {
+            window.setScene(scene2);
+            username = usernameTextField.getText();
+        });
+        VBox layout1 = new VBox(20);
+        layout1.getChildren().addAll(label1, usernameTextField, button1);
+        scene1 = new Scene(layout1,200,200);
         primaryStage.setTitle("Brick-Breaker game");
         Group root = new Group();
-        Scene scene = new Scene(root);
-        input = new Input(scene);
-        primaryStage.setScene(scene);
+
+        scene2 = new Scene(root);
+        input = new Input(scene2);
+        primaryStage.setScene(scene2);
         Canvas canvas = new Canvas(width,height);
         root.getChildren().add(canvas);
         GraphicsContext gc = canvas.getGraphicsContext2D();
 
-        primaryStage.setFullScreen(true);
-        primaryStage.setResizable(false);
-        primaryStage.show();
+        window.setScene(scene1);
+        window.setTitle("Brick-Breaker Game");
+        window.show();
+        //primaryStage.setFullScreen(true);
+        //primaryStage.setResizable(false);
+        //primaryStage.show();
 
         //================================
         //Rendering and logic block

@@ -57,7 +57,7 @@ public class Brick
         }
         return false;
     }
-    
+
     boolean detect(Ball ball)
     {
         if(notBroke)
