@@ -1,20 +1,25 @@
 package brickbreaker;
 
-import brickbreaker.Ball;
-import brickbreaker.Brick;
-
+/**
+ * Class to create the bricks
+ */
 public class BrickArray
 {
-    //variables
+
     int cross = 27;
     int down = 5;
     Brick[][] bricks = new Brick[down][cross];
-    //constructor
+
+    /**
+     * Initializer
+     */
     public BrickArray()
     {
         init();
     }
-    //methods
+    /**
+     * Initializer
+     */
     void init()
     {
         for(int i =0; i < down;i++)
@@ -25,6 +30,12 @@ public class BrickArray
             }
         }
     }
+
+    /**
+     * Increases the number of destroyed bricks
+     * @param ball ball
+     * @return number of destroyed bricks
+     */
     int checkAll(Ball ball)
     {
         int numberKilled = 0;
@@ -39,17 +50,7 @@ public class BrickArray
 
             }
         }
-        //System.out.println(numberKilled);
         return numberKilled;
     }
-    void killAll()
-    {// for clearing out all the bricks in the event of a defeat
-        for(int i=0;i<down;i++)
-        {
-            for(int j=0; j<cross;j++)
-            {
-                bricks[i][j].kill();
-            }
-        }
-    }
+
 }

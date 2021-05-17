@@ -1,6 +1,5 @@
 package brickbreaker;
 
-import brickbreaker.Ball;
 import javafx.scene.paint.Color;
 public class Brick
 {

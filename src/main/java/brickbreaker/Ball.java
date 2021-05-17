@@ -16,10 +16,10 @@ public class Ball {
     int up;
     int down;
 
-    //vetor
+
     int xVec;
     int yVec;
-    //speed
+
     int maxSpeed=20;
     int optSpeed=5;
 
@@ -39,7 +39,7 @@ public class Ball {
      * Initializes the ball's variables
      */
     void init()
-    {//initializes the ball's variables
+    {
         this.left = xPos;
         this.right = xPos + xSize;
         this.up = yPos;
@@ -66,7 +66,7 @@ public class Ball {
     /**
      * Changes the position along the y axis
      * @param player player
-     * @return
+     * @return the change
      */
     boolean yDelta(Paddle player)
     {
@@ -95,9 +95,9 @@ public class Ball {
 
     /**
      *
-     * @param player
-     * @param onPaddle
-     * @return
+      * @param player Paddle
+     * @param onPaddle if the ball is on paddle
+     * @return false if on paddle, else yDelta
      */
     boolean Delta(Paddle player, Boolean onPaddle)
     {
@@ -114,6 +114,10 @@ public class Ball {
         }
 
     }
+
+    /**
+     * Normalizes speed on x
+     */
     void normalizeX()
     {
         if(xVec < optSpeed)
@@ -125,6 +129,10 @@ public class Ball {
             xVec--;
         }
     }
+
+    /**
+     * Normalizes speed on y
+     */
     void normalizeY()
     {
         if(yVec < optSpeed)
@@ -141,22 +149,7 @@ public class Ball {
         normalizeX();
         normalizeY();
     }
-    void limitVec()
-    {
-        if(xVec >maxSpeed)
-        {
-            xVec=maxSpeed;
-        }
-        if(yVec>maxSpeed)
-        {
-            yVec = maxSpeed;
-        }
-    }
-    void check()
-    {
-        limitVec();
-        normalize();
-    }
+
     void reflectX()
     {
         xVec = xVec*-1;
@@ -165,8 +158,5 @@ public class Ball {
     {
         yVec = yVec*-1;
     }
-    void toggleFree()
-    {
-        this.free = !free;
-    }
+
 }

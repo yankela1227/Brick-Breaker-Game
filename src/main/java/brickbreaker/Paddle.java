@@ -1,5 +1,9 @@
 package brickbreaker;
 
+
+/**
+ * Class representing the Paddle of the game
+ */
 public class Paddle
 {
     /**
@@ -27,7 +31,6 @@ public class Paddle
     /**
      * Constructor
      */
-    //constructor
     public Paddle()
     {
         xPos = 0;
@@ -39,10 +42,9 @@ public class Paddle
 
     }
 
-    //methods
-    //=================
-    //DELTA BLOCK
-    //================
+    /**
+     * Moves player along the x axis
+     */
     void xDelta()
     {//moves player along the x axis
         xPos += xVec;
@@ -56,26 +58,33 @@ public class Paddle
         }
     }
 
-
+    /**
+     * Increases movement if the movement is below max speed
+     */
     void increaseXVec()
-    {//increases movment if the momvemt is below max speed
+    {
         if(xVec<maxSpeed)
         {
             xVec++;
         }
     }
 
+    /**
+     * Decreases the x velocity
+     */
     void decreaseXVec()
-    {//decreases the x veleocity
+    {
         if(xVec > minSpeed)
         {
             xVec-=2;
         }
     }
 
+    /**
+     * Applies friction to the paddle if called, slowing it's movement to zero
+     */
     void normalizeX()
-    {// this applies friction to the paddle if called, slowing it's movment to
-        //zero
+    {
         if(xVec<0)
         {
             xVec++;
