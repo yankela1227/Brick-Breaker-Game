@@ -1,4 +1,8 @@
 package brickbreaker;
+/**
+ * Class representing the Ball of the game.
+ */
+
 
 public class Ball {
     //variables
@@ -18,7 +22,10 @@ public class Ball {
     //speed
     int maxSpeed=20;
     int optSpeed=5;
-    //constructors
+
+    /**
+     * Constructors
+     */
     public Ball()
     {
         this.xPos = 500;
@@ -28,7 +35,9 @@ public class Ball {
         this.xVec = -optSpeed;
         this.yVec = optSpeed;
     }
-    //methods
+    /**
+     * Initializes the ball's variables
+     */
     void init()
     {//initializes the ball's variables
         this.left = xPos;
@@ -36,8 +45,11 @@ public class Ball {
         this.up = yPos;
         this.down = yPos + ySize;
     }
+    /**
+     * Changes the ball's position align the x axis
+     */
     void xDelta()
-    {//changes positoon aling the x axis
+    {
         xPos += xVec;
         if(xPos <0)
         {
@@ -50,8 +62,14 @@ public class Ball {
             reflectX();
         }
     }
+
+    /**
+     * Changes the position along the y axis
+     * @param player player
+     * @return
+     */
     boolean yDelta(Paddle player)
-    {//changes pisiton along the y axis
+    {
         yPos += yVec;
         if(yPos <0)
         {
@@ -74,6 +92,13 @@ public class Ball {
 
         return false;
     }
+
+    /**
+     *
+     * @param player
+     * @param onPaddle
+     * @return
+     */
     boolean Delta(Paddle player, Boolean onPaddle)
     {
         if(onPaddle)

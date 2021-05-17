@@ -4,7 +4,9 @@ import brickbreaker.Ball;
 import javafx.scene.paint.Color;
 public class Brick
 {
-    //variables
+    /**
+     * Variables
+     */
     public static int score = 0;
     int xPos;
     int yPos;
@@ -17,7 +19,13 @@ public class Brick
     int top;
     Color shade;
     boolean notBroke = true;
-    //constructor
+
+    /**
+     * Constructor
+     * @param x position on x
+     * @param y position on y
+     * @param health health of the brick
+     */
     public Brick(int x,int y, int health)
     {
         this.xPos = x;
@@ -29,7 +37,11 @@ public class Brick
         left = xPos + sizeX;
 
     }
-    //methods
+
+    /**
+     * Gives the brick a color depending on how many times it has been hit
+     * @return the color of the brick
+     */
     Color getShade()
     {
         if(health == 1)
@@ -46,6 +58,11 @@ public class Brick
         }
         return shade;
     }
+
+    /**
+     * Hit method to decrease the bricks health.
+     * @return true if the brick has broken
+     */
     boolean hit()
     {
         health --;
@@ -59,6 +76,11 @@ public class Brick
         return false;
     }
 
+    /**
+     * Method to detect if the brick has been hit.
+     * @param ball the game ball
+     * @return hit if the brick has been hit
+     */
     boolean detect(Ball ball)
     {
         if(notBroke)
@@ -99,6 +121,10 @@ public class Brick
         }
         return false;
     }
+
+    /**
+     * Method to kill the brick
+     */
     void kill()
     {
         this.health = 0;
