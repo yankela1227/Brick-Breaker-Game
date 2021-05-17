@@ -6,10 +6,14 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.TextAlignment;
+import main.Main;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 public class LEVELMenu
 {
     //variables
+    private static final Logger logger = LogManager.getLogger(Main.class);
     boolean isPlaySelected = true;
     boolean isActive;
 
@@ -101,7 +105,8 @@ public class LEVELMenu
             }
             else if(input.space)
             {
-                System.out.println("exit");
+                logger.info("exit");
+                //System.out.println("exit");
                 shouldExit = true;
 
             }

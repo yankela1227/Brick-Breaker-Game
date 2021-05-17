@@ -11,6 +11,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+
+import main.Main;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 //====================body======================================================
 public class Game
 {
@@ -22,6 +27,7 @@ public class Game
     public int tickCount = 0;//tells the number of logic updates since start
     public int width = 1370;//gives width of screen
     public int height = 768;//gives height of screen
+    private static final Logger logger = LogManager.getLogger(Main.class);
     Input input;
     LevelOperator levelOperator = new LevelOperator();
     //constructors
@@ -96,7 +102,8 @@ public class Game
                 if(System.currentTimeMillis() - lastTimer >=1000)
                 {//this resets the performance timer
                     lastTimer +=1000;
-                    System.out.println("Frames:" + frames + "  Ticks:" + ticks + " || " + input.space);
+                    logger.info("Frames:" + frames + "  Ticks:" + ticks + " || " + input.space);
+                    //System.out.println("Frames:" + frames + "  Ticks:" + ticks + " || " + input.space);
 
                     frames =0;
                     ticks = 0;
